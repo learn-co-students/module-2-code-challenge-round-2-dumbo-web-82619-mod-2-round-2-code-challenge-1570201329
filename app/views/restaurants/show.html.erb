@@ -1,0 +1,14 @@
+ <h1>Welcome to <%= @restaurant.name %></h1><br>
+
+ <small>Address: <%= @restaurant.address %></small>
+
+<p>
+ Menu: <br>
+ <% @restaurant.pizzas.each do |pizza| %>
+ <%= link_to pizza.name, pizza_path(pizza) %>
+ <br>
+ <% end %>
+ </p>
+
+
+ 

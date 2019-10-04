@@ -1,0 +1,11 @@
+<% if flash[:error] %>
+<span style="color: red"><%= flash[:error] %></span>
+<% end %>
+
+<h1>Create Your Pizza</h1>
+<%= form_for @pizza do |f| %>
+Name: <%= f.text_field :name %>
+Ingredients: <%= f.text_field :ingredients %>
+Restaurants:<%= f.collection_select :restaurant_id, Restaurant.all, :id, :name %>
+ <%= f.submit %>
+ <% end %> 
