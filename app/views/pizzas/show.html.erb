@@ -1,0 +1,23 @@
+
+Pizza Name: <%= @pizza.name%>
+<br></br>
+Pizza Ingredients : <%=@pizza.ingredients %>
+
+<%= form_for @pizza do |f|%>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :ingredients %>
+    <%= f.text_field :ingredients %>
+
+    <%= f.label :restaurant_id%>
+    <%= f.collection_select :restaurant_id, Restaurant.all, :id, :name%>
+
+    <%= f.submit%>
+<%end%>
+
+<h2> List Of Pizzas</h2>
+<% @pizzas.restaurants.each do |pizza|  %>
+        <%=  pizza.name%>
+
+<%end %>

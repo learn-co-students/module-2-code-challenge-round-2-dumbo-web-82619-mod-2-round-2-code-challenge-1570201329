@@ -54,3 +54,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "bourbon", '5.0.0.beta.8'
+
+gem 'activerecord-reset-pk-sequence'
