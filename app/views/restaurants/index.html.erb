@@ -5,4 +5,5 @@
       <%= restaurant.name %>
   </h1>
   <p>Address: <%= restaurant.address %></p>
+  <%= link_to restaurant.name, restaurant_path(restaurant), method: :get%>
 <% end %>
