@@ -1,0 +1,12 @@
+<h1>This Here is a Bangin' Pizza Joint:</h1>
+<div>
+<hr>
+<%= @restaurant.name%>
+<%= @restaurant.address%>
+</div>
+<hr>
+<h2>The Pizzas We Are Currently Serving:</h2>
+
+<% @restaurant.pizzas.each do |pizza|%>
+<%= link_to pizza.name, pizza_path(pizza) %>
+<%end%>

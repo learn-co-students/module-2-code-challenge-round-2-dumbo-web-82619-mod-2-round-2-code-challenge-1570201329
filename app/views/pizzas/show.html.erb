@@ -1,0 +1,16 @@
+<h1>Here's Your Amazing PIE!!!!</h1>
+<%= @pizza.name %>
+<%= @pizza.ingredients%>
+
+
+<div>
+<hr>
+
+<%= form_for :pizza do |f| %>
+  Pizza Name: <%= f.text_field :name %><br />
+  Ingredients : <%= f.text_area :ingredients %><br />
+  Restaurant: <%= f.collection_select(:restaurant_id, Restaurant.all, :id, :name)
+ %><br />
+  <%= f.submit %>
+  redirect_to restaurant_path(:restaurant_id)
+<% end %>
