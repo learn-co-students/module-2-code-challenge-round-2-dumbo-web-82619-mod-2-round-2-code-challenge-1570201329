@@ -38,3 +38,19 @@ Unfortunately, we don't have a way for members to create their favorite pizzas (
 6. I should not be able to create a pizza with the same name as a pizza that already exists.
 
 7. On the restaurant index page, I should be able to see a search bar, and use it to search for a restaurant.
+
+
+
+<ul>
+<% @restaurant.pizzas.each do |pizza| %>
+ 
+    <li><%= link_to pizza.name, pizza_path(pizza) %></li>
+    <%end%>
+
+    </ul>
+
+  get '/restaurants', to: 'restaurants#index'
+  get '/pizzas', to: 'pizzas#index'
+
+ <%= f.collection_select :restaurant_id, Restaurant.all, :id %>
+ 
